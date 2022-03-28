@@ -3,7 +3,7 @@ import React from 'react'
 // 导入 TabBar
 import { TabBar } from 'antd-mobile-v2'
 import './index.css'
-import { Route } from 'react-router-dom';
+import { Route } from 'react-router-dom'
 import News from '../News'
 import Index from '../Index'
 import HouseList from '../HouseList'
@@ -11,73 +11,66 @@ import Profile from '../Profile'
 
 const tabItems = [
   {
-    title: "首页",
+    title: '首页',
     path: '/home',
-    icon:'icon-ind'
+    icon: 'icon-ind'
   },
   {
-    title: "找房",
+    title: '找房',
     path: '/home/list',
-    icon:'icon-findHouse'
+    icon: 'icon-findHouse'
   },
   {
-    title: "首页",
+    title: '首页',
     path: '/home/news',
-    icon:'icon-infom'
+    icon: 'icon-infom'
   },
   {
-    title: "找房",
+    title: '我的',
     path: '/home/profile',
-    icon:'icon-my'
+    icon: 'icon-my'
   }
-
 ]
 export default class Home extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      selectedTab: this.props.location.pathname,
-    };
+      selectedTab: this.props.location.pathname
+    }
   }
-  componentDidUpdate (prevProps) {
+  componentDidUpdate(prevProps) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
       this.setState({
-        selectedTab: this.props.location.pathname,
+        selectedTab: this.props.location.pathname
       })
     }
   }
-  renderTabItems () {
+  renderTabItems() {
     return tabItems.map(item => (
       <TabBar.Item
-            title={item.title}
-            key={item.title}
-            icon={<i className={`iconfont ${item.icon}`}/>}
-            selectedIcon={<i className={`iconfont ${item.icon}`}/>}
-            selected={this.state.selectedTab === item.path}
-            onPress={() => {
-              this.props.history.push(item.path)
-            }}
-            data-seed="logId"
-          ></TabBar.Item>
+        title={item.title}
+        key={item.title}
+        icon={<i className={`iconfont ${item.icon}`} />}
+        selectedIcon={<i className={`iconfont ${item.icon}`} />}
+        selected={this.state.selectedTab === item.path}
+        onPress={() => {
+          this.props.history.push(item.path)
+        }}
+        data-seed="logId"
+      ></TabBar.Item>
     ))
   }
   render() {
     return (
-      <div className='home'>
-        <Route path='/home/news' component={News} />
-        <Route path='/home/list' component={HouseList} />
-        <Route exact path='/home' component={Index} />
-        <Route path='/home/profile' component={ Profile}/>
-        <TabBar
-          tintColor="#21B97A"
-          barTintColor="white"
-          noRenderContent={true}
-        >
+      <div className="home">
+        <Route path="/home/news" component={News} />
+        <Route path="/home/list" component={HouseList} />
+        <Route exact path="/home" component={Index} />
+        <Route path="/home/profile" component={Profile} />
+        <TabBar tintColor="#21B97A" barTintColor="white" noRenderContent={true}>
           {this.renderTabItems()}
         </TabBar>
       </div>
-    );
+    )
   }
 }
-
-
