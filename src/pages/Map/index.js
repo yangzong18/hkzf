@@ -84,12 +84,9 @@ export default class Map extends React.Component {
       const res = await axios.get(`http://localhost:8080/area/map?id=${id}`)
       // 关闭 loading
       Toast.hide()
-
       const data = res.data.body
-
       // 调用 getTypeAndZoom 方法获取级别和类型
       const { nextZoom, type } = this.getTypeAndZoom()
-
       data.forEach(item => {
         // 创建覆盖物
         this.createOverlays(item, nextZoom, type)
@@ -139,7 +136,6 @@ export default class Map extends React.Component {
       count,
       value
     } = data
-
     // 创建坐标对象
     const areaPoint = new BMap.Point(longitude, latitude)
 
@@ -190,6 +186,10 @@ export default class Map extends React.Component {
 
   // 创建小区覆盖物
   createRect(point, name, count, id) {
+    console.log(1111)
+    if (count === 0) {
+      console.log(1111)
+    }
     // 创建覆盖物
     const label = new BMap.Label('', {
       position: point,

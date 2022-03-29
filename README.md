@@ -1,74 +1,23 @@
-# Getting Started with Create React App
+## 好客租房手机端
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 技术
 
-## Available Scripts
+- 前后端分离开发模式，后端服务有 koa+mysql 开发
+- 前端使用了`react` 和 `antv-mobile-v2`
 
-In the project directory, you can run:
+### 技术解决
 
-### `npm start`
+- 采用阿里旗下的 `antd-mobile` 组件库快速开发页面
+  - 采用 `react-router-dom` 轻松实现 `SPA` 单页应用程序
+  - 采用 `react-virtualized` 组件实现移动端长列表性能优化，保证加载大数据列表时用户使用流畅度
+  - 采用 `formik+yup` 实现大型项目中复杂表单的处理
+  - 采用 `react-spring` 轻松实现 `React` 动画效果，增加用户体验
+  - 采用 `CSS Modules` 技术实现 `CSS` 模块化管理，避免组件间的样式冲突
+  - 使用百度地图 `API` 实现可视化找房功能
+  - 基于 `RESTful` 风格的数据 `API` 解决方案
+  - 采用 `Swagger` 实现 `API` 文档
+  - 使用 `JWT` 技术实现登录状态保持
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### api 接口地址
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-### api
-
-This api url is:[https://gitee.com/yangpeng1838/hkzf_api](https://gitee.com/yangpeng1838/hkzf_api)
+- This api url is:https://gitee.com/yangpeng1838/hkzf_api

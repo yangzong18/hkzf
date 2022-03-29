@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { lazy } from 'react'
 
 // 导入 TabBar
 import { TabBar } from 'antd-mobile-v2'
 import './index.css'
 import { Route } from 'react-router-dom'
-import News from '../News'
 import Index from '../Index'
-import HouseList from '../HouseList'
-import Profile from '../Profile'
 
+const News = lazy(() => import('../News'))
+const Profile = lazy(() => import('../Profile'))
+const HouseList = lazy(() => import('../HouseList'))
 const tabItems = [
   {
     title: '首页',
@@ -21,7 +21,7 @@ const tabItems = [
     icon: 'icon-findHouse'
   },
   {
-    title: '首页',
+    title: '资讯',
     path: '/home/news',
     icon: 'icon-infom'
   },
