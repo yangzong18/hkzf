@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
-
+import Loading from './components/Loading'
 // 导入首页和城市选择两个组件（页面）
 // import Home from './pages/Home'
 // import CityList from './pages/CityList'
@@ -12,7 +12,7 @@ const CityList = lazy(() => import('./pages/CityList'))
 function App() {
   return (
     <Router>
-      <Suspense fallback={<div className="route-loading">loading</div>}>
+      <Suspense fallback={<Loading />}>
         <div className="App">
           {/* 默认路由，直接跳转到home */}
           <Route path="/" exact render={() => <Redirect to="/home" />} />

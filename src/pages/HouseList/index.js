@@ -8,6 +8,8 @@ import { getCurrentCity } from '../../utils/index'
 // 导入组件
 import HouseItem from '../../components/HouseItem'
 import SearchHeader from '../../components/SearchHeader'
+import Sticky from '../../components/Sticky'
+import Filter from './components/Filter'
 
 import { request } from '../../utils/request'
 import { BASE_URL } from '../../utils/url'
@@ -29,6 +31,11 @@ export default class HouseList extends React.Component {
       label,
       value
     })
+    this.searchList()
+  }
+  onFilter = filters => {
+    window.scrollTo(0, 0)
+    this.filters = filters
     this.searchList()
   }
   async searchList() {
@@ -154,6 +161,10 @@ export default class HouseList extends React.Component {
           <i className="iconfont icon-back" onClick={() => this.props.history.go(-1)} />
           <SearchHeader className={styles.searchHeader} cityName={this.state.label}></SearchHeader>
         </Flex>
+        {/* 条件筛选栏 */}
+        <Sticky height={40}>
+          <Filter onFilter={this.onFilter} />
+        </Sticky>
         <div className={styles.houseItems}>{this.renderList()}</div>
       </div>
     )

@@ -4,8 +4,7 @@
 
 .msg {
   color: #666;
-  height: 100vh;
-  width: 100vw;
+  min-height: 65vh;
   display: flex;
   justify-content: center;
   align-items: center;

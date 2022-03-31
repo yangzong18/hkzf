@@ -28,4 +28,5 @@
 /* 房屋列表样式 */
 .houseItems {
   padding: 0 15px;
+  padding-bottom: 50px;
 }

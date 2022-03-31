@@ -1,6 +1,7 @@
 import { Flex } from 'antd-mobile-v2'
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import './index.scss'
 function SearchHeader({ cityName, className, history }) {
   return (
@@ -19,5 +20,10 @@ function SearchHeader({ cityName, className, history }) {
       <i className="iconfont icon-map" onClick={() => history.push('/map')} />
     </Flex>
   )
+}
+// 添加属性校验
+SearchHeader.propTypes = {
+  cityName: PropTypes.string.isRequired,
+  className: PropTypes.string
 }
 export default withRouter(SearchHeader)
