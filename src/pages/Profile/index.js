@@ -30,6 +30,9 @@ export default class Profile extends React.Component {
       nickname: ''
     }
   }
+  componentDidMount() {
+    this.getUserInfo()
+  }
   logout() {
     alert('提示', '是否确定退出?', [
       { text: '取消' },
@@ -42,7 +45,7 @@ export default class Profile extends React.Component {
               authorization: getToken()
             }
           })
-          if (data.status == 200) {
+          if (data.status === 200) {
             // 移除本地token
             removeToken()
             // 处理状态
@@ -57,6 +60,30 @@ export default class Profile extends React.Component {
         }
       }
     ])
+  }
+  async getUserInfo() {
+    if (!this.state.isLogin) {
+      return
+    }
+
+    const { data } = await request.get('/user', {
+      header: {
+        authorization: getToken()
+      }
+    })
+    if (data.status === 200) {
+      const { avatar, nickname } = data.body
+      this.setState({
+        userInfo: {
+          avatar: avatar === null ? DEFAULT_AVATAR : BASE_URL + avatar,
+          nickname
+        }
+      })
+    } else {
+      this.setState({
+        isLogin: false
+      })
+    }
   }
   render() {
     const { history } = this.props

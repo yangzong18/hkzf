@@ -90,7 +90,7 @@ export default class HouseDetail extends Component {
     const { houseInfo } = this.state
     return houseInfo.houseImg.map(item => (
       <a key={item}>
-        <img src={BASE_URL + item} />
+        <img src={BASE_URL + item} alt={item} />
       </a>
     ))
   }
@@ -116,8 +116,7 @@ export default class HouseDetail extends Component {
   render() {
     const {
       isLoading,
-      houseInfo: { community, title, price, roomType, size, floor, oriented, supporting, description },
-      isFavorite
+      houseInfo: { community, title, price, roomType, size, floor, oriented, supporting }
     } = this.state
     return (
       <div className={styles.root}>
