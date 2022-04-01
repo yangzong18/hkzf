@@ -9,6 +9,7 @@
     "antd-mobile-icons": "^0.2.2",
     "antd-mobile-v2": "^2.3.4",
     "axios": "^0.26.1",
+    "formik": "^2.2.9",
     "node-sass": "^7.0.1",
     "prop-types": "^15.8.1",
     "react": "16",
@@ -17,7 +18,8 @@
     "react-scripts": "5.0.0",
     "react-spring": "^9.4.4",
     "react-virtualized": "^9.22.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",

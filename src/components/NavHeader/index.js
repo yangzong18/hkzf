@@ -1,12 +1,12 @@
 import React from 'react'
 import { NavBar } from 'antd-mobile-v2'
-import './index.scss'
+import styles from './index.module.css'
 import { withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
-function NavHeader({ children, history, onLeftClick }) {
+function NavHeader({ children, history, onLeftClick, className, rightContent }) {
   const defaultHandler = () => history.go(-1)
   return (
-    <NavBar className="navbar" mode="light" icon={<i className="iconfont icon-back"></i>} onLeftClick={onLeftClick || defaultHandler}>
+    <NavBar icon={<i className="iconfont icon-back" />} className={[styles.navbar, className || ''].join(' ')} mode="light" onLeftClick={onLeftClick || defaultHandler} rightContent={rightContent}>
       {children}
     </NavBar>
   )
@@ -14,7 +14,9 @@ function NavHeader({ children, history, onLeftClick }) {
 
 NavHeader.propTypes = {
   children: PropTypes.string.isRequired,
-  onLeftClick: PropTypes.func
+  onLeftClick: PropTypes.func,
+  className: PropTypes.string,
+  rightContent: PropTypes.array
 }
 
 export default withRouter(NavHeader)

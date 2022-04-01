@@ -9,6 +9,9 @@ import Loading from './components/Loading'
 const Home = lazy(() => import('./pages/Home'))
 const Map = lazy(() => import('./pages/Map'))
 const CityList = lazy(() => import('./pages/CityList'))
+const Detail = lazy(() => import('./pages/HouseDetail'))
+const Login = lazy(() => import('./pages/Login'))
+const Registe = lazy(() => import('./pages/Registe'))
 function App() {
   return (
     <Router>
@@ -20,6 +23,10 @@ function App() {
           <Route exact={false} path="/home" component={Home} />
           <Route exact={false} path="/citylist" component={CityList} />
           <Route exact={false} path="/map" component={Map} />
+
+          <Route exact={false} path="/detail/:id" component={Detail} />
+          <Route exact={false} path="/login" component={Login} />
+          <Route exact={false} path="/registe" component={Registe} />
         </div>
       </Suspense>
     </Router>
